@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script language="JavaScript">
+function validate()
+{ 
+ var firstname = document.form.firstname.value;
+ var lastname = document.form.lastname.value;
+ var email = document.form.email.value;
+ var username = document.form.username.value; 
+ var password = document.form.password.value;
+ var conpassword= document.form.conpassword.value;
+ 
+ if (firstname==null || firstname=="")
+ { 
+ alert("first Name can't be blank"); 
+ return false; 
+ }
+ else if (lastname==null || lastname=="")
+ { 
+ alert("Last Name can't be blank"); 
+ return false; 
+ }
+ else if (email==null || email=="")
+ { 
+ alert("Email can't be blank"); 
+ return false; 
+ }
+ else if (username==null || username=="")
+ { 
+ alert("Username can't be blank"); 
+ return false; 
+ }
+ else if(password.length<6)
+ { 
+ alert("Password must be at least 6 characters long."); 
+ return false; 
+ } 
+ else if (password!=conpassword)
+ { 
+ alert("Confirm Password should match with the Password"); 
+ return false; 
+ } 
+ } 
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="lightgreen">
+<h1 align="center">Fill out this form to register</h1>
+<form name="form" method="post" action="NewUser" onSubmit="return validate()">
+<table align="center">
+<tr>
+				<td>First Name</td>
+				<td><input type="text" name="firstname"></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input type="text" name="lastname"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>User Name</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Re-Type Password</td>
+				<td><input type="password" name="conpassword"></td>
+			</tr>
+			<tr>
+				<td></td><td align="center"><input type="submit" value="Register"><input
+ type="reset" value="Reset"></input></td>
+			</tr>
+		</table></form>
+</body>
+</html>
